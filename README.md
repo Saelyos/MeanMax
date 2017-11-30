@@ -1,6 +1,6 @@
 # MeanMax
 
-As always when a contest end, I’m really impressed with the solutions the other players have. I often feel like I have good result by doing way more easy and classical things.
+As always when a contest end, I’m really impressed with the solutions the other players have. I often feel like I have good result by doing way more simple and classical things.
 
 ## Game engine
 The first step was to have a good game engine to simulate the game… and I’ve been really bad at doing it. Even if I had just done CSB and we had a good referee, I had a lot of pain having a simulation without bugs.
@@ -15,7 +15,7 @@ Then I had to code an evaluation function, it includes:
 -	The distance between the doof and the closest opponent reaper 
 -	The distance between the reaper and the destroyer
 
-The final evaluation is then `myScore – (0.5*opponent1Score – 0.5*opponent2Score)`  
+The final evaluation is then `myScore – (0.5*opponent1Score – 0.5*opponent2Score)` and I compute it at each step with a degressive coeff of 0.75  
 With this fitness function and a simple MC, I could climb from mid silver to 10th legend in two pushes on Saturday. What a day!
 
 ## Genetic algorithm
@@ -38,8 +38,9 @@ I initially wanted to do something very complex but because of the lack of time 
 I first want to know the progress of the game. This is defined by: `progress = min (turn/200, maxPlayersScore/50)`  
 I then determine the player I want to beat by calculating the closest opponent in score. (for example if the scores are 30 for me and 22 - 40 for the opponents, abs(30-22) < abs(30-40) so I’ll focus the one who has 22).
 The coefficient given to the opponents are:  
-`0.5 + 0.5 * progress` for the opponent I want to focus  
-`0.5 - 0.5 * progress` for the other  
+- `0.5 + 0.5 * progress` for the opponent I want to focus  
+- `0.5 - 0.5 * progress` for the other  
+
 And when I compute the final evaluation, it is now `myScore – opponent1Score*coef1 – opponent2Score*coeff2`  
 That way I will at the beginning of the game focus equally both players and at the end of the game only the closest opponent.
 
@@ -52,8 +53,8 @@ The only two improvements are:
 The other players made a lot of progress during Sunday night and I finished 4th in a very close battle for the top!
 
 ## Final thoughts:
-Once again, a really good contest, maybe complex for beginners but the theme was good and we were really playing a game corresponding to the theme :) 
-About 1v1v1: I think I prefer 1v1 because you have a better control of the outcome of a game. However:
+Once again, a really good contest, maybe complex for beginners but the theme was good and we were really playing a game corresponding to the theme :)  
+About 1v1v1, I think I prefer 1v1 because you have a better control of the outcome of a game. However:
 -	this was really well implemented with a good map, and there wasn’t a mix of 1v1 and 1v1v1 which is would have forced us to do multiple strategies.
 -	All the recent contests were 1v1 contests so that’s nice to change.
 -	It contributes to having a chaotic game in the Mad Max theme!
