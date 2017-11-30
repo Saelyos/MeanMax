@@ -1,10 +1,10 @@
 # MeanMax
 
-As always when a contest end, I’m really impressed with the solutions the other players have. I often feel like I have good result by doing way more simple and classical things.
+As always when a contest ends, I’m really impressed with the solutions the other players have. I often feel like I have good results by doing way more simple and classical things.
 
 ## Game engine
-The first step was to have a good game engine to simulate the game… and I’ve been really bad at doing it. Even if I had just done CSB and we had a good referee, I had a lot of pain having a simulation without bugs.
-To be sure that my simulation is correct I play against myself and check that the inputs given by CG are the same than what I simulate from the previous turn. I only achieved it on Friday.
+The first step was to have a good game engine to simulate the game… and I’ve been really bad at doing it. Even though I had just done CSB and we had a good referee, I had a lot of pain having a simulation without bugs.
+To be sure that my simulation is correct I play against myself and check that the inputs given by CG are the same as what I simulate from the previous turn. I only achieved it on Friday.
 
 ## Fitness function
 Then I had to code an evaluation function, it includes:
@@ -27,7 +27,7 @@ The next improvement was to add dummies to simulate the enemies. They do the fol
 -	Destroyer: wait (here I had no good idea as this unit is very unpredictable, sometimes it will destroy a tanker if the reaper can go to it, sometimes it won’t)
 -	Doof: go to the closest enemy reaper
 
-The addition of the GA and the dummies leaded me to 1st place for a brief moment!
+The addition of the GA and the dummies led me to 1st place for a brief moment!
 
 ## Dealing with 1v1v1
 This is maybe the only special thing I tried, even if I’m not sure it helped me a lot.  
@@ -47,15 +47,15 @@ That way I will at the beginning of the game focus equally both players and at t
 ## Other improvements
 During the last hours, I tried to change the magic numbers and a lot of other things in my evaluation function but nothing really worked (my final magic numbers are basically the same as the one in my first fitness function!). 
 The only two improvements are:
--	Instead of focusing the closest reaper, my doof focus the reaper of the player I am focusing.
--	Instead of targeting the reaper directly, the doof targets the closest wreck from the reaper in order to bloc him.
+-	Instead of focusing the closest reaper, my doof focuses the reaper of the player I am focusing.
+-	Instead of targeting the reaper directly, the doof targets the closest wreck to the reaper in order to block him.
 
 The other players made a lot of progress during Sunday night and I finished 4th in a very close battle for the top!
 
 ## Final thoughts:
 Once again, a really good contest, maybe complex for beginners but the theme was good and we were really playing a game corresponding to the theme :)  
 About 1v1v1, I think I prefer 1v1 because you have a better control of the outcome of a game. However:
--	this was really well implemented with a good map, and there wasn’t a mix of 1v1 and 1v1v1 which is would have forced us to do multiple strategies.
+-	this was really well implemented with a good map, and there wasn’t a mix of 1v1 and 1v1v1 which would have forced us to do multiple strategies.
 -	All the recent contests were 1v1 contests so that’s nice to change.
 -	It contributes to having a chaotic game in the Mad Max theme!
 
