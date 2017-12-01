@@ -35,7 +35,7 @@ When playing a 1v1v1 game, you must know which player(s) you want to consider/fo
 For example, if you’re 2nd in score, sometimes you want to focus the 1st player if you can catch him up, sometimes you just want to be sure that the 3rd player won’t pass you, and sometimes you want to focus both because the scores are close or because it’s too early in the game to guess who will win.  
 I initially wanted to do something very complex but because of the lack of time I ended up with a simpler version: 
 
-I first want to know the progress of the game. This is defined by: `progress = min (turn/200, maxPlayersScore/50)`  
+I first want to know the progress of the game. This is defined by: `progress = max (turn/200, maxPlayersScore/50)`  
 I then determine the player I want to beat by calculating the closest opponent in score. (for example if the scores are 30 for me and 22 - 40 for the opponents, abs(30-22) < abs(30-40) so I’ll focus the one who has 22).
 The coefficient given to the opponents are:  
 - `0.5 + 0.5 * progress` for the opponent I want to focus  
